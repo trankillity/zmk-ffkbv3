@@ -63,14 +63,14 @@
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positons = <1>;
             timeout-ms = <750>;
-        }
+        };
         swap_prev: swap_prev {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
             ignored-key-positons = <1>;
             timeout-ms = <750>;
-        }
+        };
     };
 
     conditional_layers {
