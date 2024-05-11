@@ -79,10 +79,8 @@
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "okay";
-        // This is for my personal build, where I hand wired the DR pin on the cirque to the ffkb v2 led pin (P0.06)
         dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "4x";
+        sensitivity = "1x";
         sleep;
         no-taps;
     };
@@ -95,7 +93,6 @@
     input_config {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
-
         xy-swap;
         y-invert;
         x-invert;
