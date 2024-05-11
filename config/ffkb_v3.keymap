@@ -28,6 +28,7 @@
     //     sensors = <&encoder_1 &encoder_2>;
     //     triggers-per-rotation = <20>;
     // };
+    
 
     combos {
         #include "combos.overlay"
