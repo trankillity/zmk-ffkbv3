@@ -2,7 +2,6 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
-            // &kp ESC      &kp K_APP    &kp HOME     &kp UP       &kp END      &kp PG_UP                &kp INS      &kp LA(TAB)  &kp LA(LS(TAB)) &kp C_BRI_UP &kp C_BRI_DN &none
  */
 
 #include <behaviors.dtsi>
@@ -24,8 +23,10 @@
 
 &sk {
     quick-release;
-}
-
+};
+/*
+             &kp ESC      &kp K_APP    &kp HOME     &kp UP       &kp END      &kp PG_UP                &kp INS      &kp LA(TAB)  &kp LA(LS(TAB)) &kp C_BRI_UP &kp C_BRI_DN &none
+*/
 / {
 
     sensors {
