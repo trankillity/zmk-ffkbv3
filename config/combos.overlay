@@ -20,7 +20,7 @@ compatible = "zmk,combos";
 /* Brackets */
 COMBO(lbrk, &kp LBKT, 2 3, 20, BASE NUMB)
 COMBO(rbrk, &kp RBKT, 8 9, 20, BASE NUMB)
-COMBO(lpar, &kp LPAR, 15 16, 20, BASE NUMB)
+COMBO(lpar, &kp LPAR, 14 15, 20, BASE NUMB)
 COMBO(rpar, &kp RPAR, 20 21, 20, BASE NUMB)
 COMBO(lang, &kp LT, 26 27, 20, BASE NUMB)
 COMBO(rang, &kp GT, 32 33, 20, BASE NUMB)
