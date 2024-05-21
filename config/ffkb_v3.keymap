@@ -42,6 +42,11 @@
     };
 
     behaviors {
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
@@ -117,7 +122,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-        sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
         bindings = <
             &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp B                    &kp J         &kp L         &kp U         &kp Y         &kp SQT       &kp BSLH
@@ -128,7 +133,7 @@
         };
 
         navi_layer {
-        sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
         bindings = <
             &kp ESC       &kp INS       &kp HOME      &kp UP        &kp END       &kp PG_UP                &kp K_APP     &swap_next    &swap_prev    &kp C_BRI_UP  &kp C_BRI_DN  &none
@@ -139,7 +144,7 @@
         };
 
         numb_layer {
-        sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
         bindings = <
             &kp F6        &kp F5        &kp F4        &kp F3        &kp F2        &kp F1                   &kp EQUAL     &kp N7        &kp N8        &kp N9        &kp DOT       &kp COMMA
@@ -150,7 +155,7 @@
         };
 
         func_layer {
-        sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN &inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
         bindings = <
             &none         &none         &none         &none         &none         &none                    &none         &none         &none         &none         &none         &none
