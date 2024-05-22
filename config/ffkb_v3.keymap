@@ -122,29 +122,29 @@
         compatible = "zmk,keymap";
 
         default_layer {
-        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp PG_DN PG_UP &rot_kp C_VOL_UP C_VOL_DN>;
 
         bindings = <
             &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp B                    &kp J         &kp L         &kp U         &kp Y         &kp SQT       &kp BSLH
             &kp TAB       &hml LGUI A   &hml LALT R   &hml LCTL S   &hml LSHIFT T &kp G                    &kp M         &hmr RSHIFT N &hmr RCTL E   &hmr RALT I   &hmr RGUI O   &kp LS(TAB)
-            &sk LCTL      &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &csemi        &dcoln        &kp FSLH      &kp LC(ENTER)
-                                        &kp C_MUTE    &mo NUMB      &spc_caps     &kp BSPC                 &kp ENTER     &kp SPACE     &mo NAVI      &kp C_MUTE
+            &trans        &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &csemi        &dcoln        &kp FSLH      &kp LC(ENTER)
+                                        &trans        &mo NUMB      &spc_caps     &kp BSPC                 &kp ENTER     &kp SPACE     &mo NAVI      &kp C_MUTE
         >;
         };
 
         navi_layer {
-        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp LC(RIGHT) LC(LEFT) &rot_kp C_VOL_UP C_VOL_DN>;
 
         bindings = <
-            &kp ESC       &kp INS       &kp HOME      &kp UP        &kp END       &kp PG_UP                &kp K_APP     &swap_next    &swap_prev    &kp C_BRI_UP  &kp C_BRI_DN  &none
-            &kp TAB       &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN                &kp C_VOL_UP  &sk RSHIFT    &sk RCTL      &sk RALT      &sk RGUI      &kp LS(TAB)
-            &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)                &kp C_VOL_DN  &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_STOP    &kp C_MUTE
-                                        &trans        &trans        &trans        &kp DEL                  &trans        &trans        &trans        &trans
+            &trans        &kp INS       &kp HOME      &kp UP        &kp END       &kp PG_UP                &kp K_APP     &swap_next    &swap_prev    &kp C_BRI_UP  &kp C_BRI_DN  &none
+            &trans        &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN                &kp C_VOL_UP  &sk RSHIFT    &sk RCTL      &sk RALT      &sk RGUI      &trans
+            &trans        &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)                &kp C_VOL_DN  &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_STOP    &none
+                                        &kp LC(BSPC)  &trans        &trans        &kp DEL                  &trans        &trans        &trans        &trans
             >;
         };
 
         numb_layer {
-        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp PG_UP PG_DN &rot_kp LC(DOWN) LC(UP)>;
 
         bindings = <
             &kp F6        &kp F5        &kp F4        &kp F3        &kp F2        &kp F1                   &kp EQUAL     &kp N7        &kp N8        &kp N9        &kp DOT       &kp COMMA
@@ -155,13 +155,13 @@
         };
 
         func_layer {
-        sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN &rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        sensor-bindings = <&rot_kp LG(RIGHT) LG(LEFT) &rot_kp LG(LA(RIGHT)) LG(LA(LEFT))>;
 
         bindings = <
             &none         &none         &none         &none         &none         &none                    &none         &none         &none         &none         &none         &none
             &bt BT_CLR    &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none                    &none         &none         &none         &none         &none         &none
             &sys_reset    &none         &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &none                    &none         &none         &none         &none         &none         &bootloader
-                                        &trans        &trans        &trans        &trans                   &trans        &trans        &trans        &trans
+                                        &kp LG(TAB)   &trans        &trans        &trans                   &trans        &trans        &trans        &kp LG(TAB)
         >;
         };
     };
