@@ -158,9 +158,9 @@
         sensor-bindings = <&rot_kp LG(RIGHT) LG(LEFT) &rot_kp LG(LA(RIGHT)) LG(LA(LEFT))>;
 
         bindings = <
-            &none         &none         &none         &none         &none         &none                    &none         &none         &none         &none         &none         &none
-            &bt BT_CLR    &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none                    &none         &none         &none         &none         &none         &none
-            &sys_reset    &none         &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &none                    &none         &none         &none         &none         &none         &bootloader
+            &none         &none         &none         &none         &none         &out OUT_BLE             &out OUT_USB  &none         &none         &none         &none         &none
+            &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none                    &none         &none         &none         &none         &none         &none
+            &sys_reset    &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &none                    &none         &none         &none         &none         &none         &bootloader
                                         &kp LG(TAB)   &trans        &trans        &trans                   &trans        &trans        &trans        &kp LG(TAB)
         >;
         };
