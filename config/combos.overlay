@@ -32,9 +32,9 @@ COMBO(reboot, &sys_reset, 25 26 33 34, 50, BASE)
 COMBO(loader, &bootloader, 0 12 24 11 23 35, 50, BASE)
 
 /* Mouse */
-COMBO(mouse1, &mkp MB1, 14 16, 30, BASE)
-COMBO(mouse2, &mkp MB2, 2 4, 30, BASE)
-COMBO(mouse3, &mkp MB3, 26 28, 30, BASE)
+// COMBO(mouse1, &mkp MB1, 14 16, 30, BASE)
+// COMBO(mouse2, &mkp MB2, 2 4, 30, BASE)
+// COMBO(mouse3, &mkp MB3, 26 28, 30, BASE)
 
 /* Common Symbols */
 COMBO(dash, &kp MINUS, 4 16, 30, BASE)
