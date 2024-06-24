@@ -11,14 +11,14 @@ manifest:
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
   projects:
-    # - name: zmk
-    #   remote: petejohanson
-    #   revision: feat/pointers-move-scroll
-    #   import: app/west.yml
     - name: zmk
       remote: petejohanson
-      revision: sensors/add-some-multiple-sensors-logging
+      revision: feat/pointers-move-scroll
       import: app/west.yml
+    # - name: zmk
+    #   remote: petejohanson
+    #   revision: sensors/add-some-multiple-sensors-logging
+    #   import: app/west.yml
     - name: zmk-tri-state
       remote: dhruvinsh
       revision: main
