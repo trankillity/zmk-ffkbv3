@@ -18,12 +18,12 @@ compatible = "zmk,combos";
   };
 
 /* Brackets */
-// COMBO(lbrk, &kp LBKT, 2 3, 30, BASE NUMB)
-// COMBO(rbrk, &kp RBKT, 8 9, 30, BASE NUMB)
-COMBO(lpar, &l_parang, 14 15, 30, BASE NUMB)
-COMBO(rpar, &r_parang, 20 21, 30, BASE NUMB)
-COMBO(lang, &kp LT, 26 27, 30, BASE NUMB)
-COMBO(rang, &kp GT, 32 33, 30, BASE NUMB)
+COMBO(lbrk, &kp LBKT, 2 3, 30, BASE NUMB)
+COMBO(rbrk, &kp RBKT, 8 9, 30, BASE NUMB)
+COMBO(lpar, &l_parang, 26 27, 30, BASE NUMB)
+COMBO(rpar, &r_parang, 32 33, 30, BASE NUMB)
+// COMBO(lang, &kp LT, 26 27, 30, BASE NUMB)
+// COMBO(rang, &kp GT, 32 33, 30, BASE NUMB)
 
 /* System */
 COMBO(caps, &kp CAPS, 17 18, 50, BASE)
