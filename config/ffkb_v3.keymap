@@ -93,7 +93,7 @@
             bindings = <&kp LPAR>, <&kp LT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        r_parang: left_parenangle {
+        r_parang: right_parenangle {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RPAR>, <&kp GT>;
