@@ -37,10 +37,6 @@
         triggers-per-rotation = <15>;
     };
 
-    combos {
-        #include "combos.overlay"
-    };
-
     behaviors {
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -75,7 +71,7 @@
         spc_caps: space_capsword {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <200>;
             bindings = <&skq LSHIFT>, <&caps_word>;
         };
         csemi: comma_semicolon {
@@ -91,6 +87,18 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        l_parang: left_parenangle {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        r_parang: left_parenangle {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         swap_next: swap_next {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
@@ -103,6 +111,10 @@
             bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
             timeout-ms = <1500>;
         };
+    };
+
+    combos {
+        #include "combos.overlay"
     };
 
     conditional_layers {

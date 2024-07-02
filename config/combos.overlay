@@ -18,24 +18,22 @@ compatible = "zmk,combos";
   };
 
 /* Brackets */
-COMBO(lbrk, &kp LBKT, 2 3, 20, BASE NUMB)
-COMBO(rbrk, &kp RBKT, 8 9, 20, BASE NUMB)
-COMBO(lpar, &kp LPAR, 14 15, 20, BASE NUMB)
-COMBO(rpar, &kp RPAR, 20 21, 20, BASE NUMB)
-COMBO(lang, &kp LT, 26 27, 20, BASE NUMB)
-COMBO(rang, &kp GT, 32 33, 20, BASE NUMB)
+// COMBO(lbrk, &kp LBKT, 2 3, 30, BASE NUMB)
+// COMBO(rbrk, &kp RBKT, 8 9, 30, BASE NUMB)
+COMBO(lpar, &l_parang, 14 15, 30, BASE NUMB)
+COMBO(rpar, &r_parang, 20 21, 30, BASE NUMB)
+COMBO(lang, &kp LT, 26 27, 30, BASE NUMB)
+COMBO(rang, &kp GT, 32 33, 30, BASE NUMB)
 
 /* System */
-COMBO(caps, &caps_word, 17 18, 50, BASE)
+COMBO(caps, &kp CAPS, 17 18, 50, BASE)
 COMBO(login, &kp LC(LA(DEL)), 1 2 9 10, 50, BASE)
-COMBO(reboot, &sys_reset, 25 26 33 34, 50, BASE)
-COMBO(loader, &bootloader, 0 12 24 11 23 35, 50, BASE)
 
 /* Mouse */
-// COMBO(mouse1, &mkp MB1, 14 16, 30, BASE)
-// COMBO(mouse2, &mkp MB2, 2 4, 30, BASE)
-// COMBO(mouse3, &mkp MB3, 26 28, 30, BASE)
+COMBO(mouse1, &mkp MB1, 14 16, 30, BASE)
+COMBO(mouse2, &mkp MB2, 2 4, 30, BASE)
+COMBO(mouse3, &mkp MB3, 26 28, 30, BASE)
 
 /* Common Symbols */
-COMBO(dash, &kp MINUS, 4 16, 30, BASE)
-COMBO(undr, &kp UNDERSCORE, 7 19, 30, BASE)
+COMBO(dash, &kp MINUS, 4 16, 40, BASE)
+COMBO(undr, &kp UNDERSCORE, 7 19, 40, BASE)
