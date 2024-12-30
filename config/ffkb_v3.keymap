@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <behaviors/mouse_keys.dtsi>
+// #include <dt-bindings/zmk/mouse.h>
+// #include <behaviors/mouse_keys.dtsi>
  
 #define BASE 0
 #define NAVI 1
@@ -31,11 +31,11 @@
 
 / {
 
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder_1 &encoder_2>;
-        triggers-per-rotation = <15>;
-    };
+    // sensors {
+    //     compatible = "zmk,keymap-sensors";
+    //     sensors = <&encoder_1 &encoder_2>;
+    //     triggers-per-rotation = <15>;
+    // };
 
     behaviors {
         skq: sticky_key_quick_release {
