@@ -8,8 +8,8 @@ manifest:
     #       ZMK main yet. Once it's merged, you no longer need this.
     # - name: petejohanson
     #   url-base: https://github.com/petejohanson
-    # - name: dhruvinsh
-    #   url-base: https://github.com/dhruvinsh
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
   projects:
     - name: zmk
       remote: zmkfirmware
