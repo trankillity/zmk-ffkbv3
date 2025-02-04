@@ -16,6 +16,7 @@
 #define NAVI 1
 #define NUMB 2
 #define FUNC 3
+#define SYST 4
  
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -68,25 +69,31 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 39 40 41 42 43>;
             hold-trigger-on-release;
         };
-        spc_caps: space_capsword {
+        sft_caps: shift_capsword {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&skq LSHIFT>, <&caps_word>;
         };
-        csemi: comma_semicolon {
+        shm: shift_mod {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        dcoln: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        // csemi: comma_semicolon {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp COMMA>, <&kp SEMI>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        // };
+        // dcoln: dot_colon {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp DOT>, <&kp SEMI>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        //     keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        // };
         // l_parang: left_parenangle {
         //     compatible = "zmk,behavior-mod-morph";
         //     #binding-cells = <0>;
@@ -99,18 +106,18 @@
         //     bindings = <&kp RPAR>, <&kp GT>;
         //     mods = <(MOD_LSFT|MOD_RSFT)>;
         // };
-        swap_next: swap_next {
-            compatible = "zmk,behavior-tri-state";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            timeout-ms = <1500>;
-        };
-        swap_prev: swap_prev {
-            compatible = "zmk,behavior-tri-state";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
-            timeout-ms = <1500>;
-        };
+        // swap_next: swap_next {
+        //     compatible = "zmk,behavior-tri-state";
+        //     #binding-cells = <0>;
+        //     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+        //     timeout-ms = <1500>;
+        // };
+        // swap_prev: swap_prev {
+        //     compatible = "zmk,behavior-tri-state";
+        //     #binding-cells = <0>;
+        //     bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
+        //     timeout-ms = <1500>;
+        // };
     };
 
     combos {
@@ -120,8 +127,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <NAVI NUMB>;
+            then-layer = <SYST>;
         };
     };
 
@@ -132,10 +139,10 @@
         sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
 
         bindings = <
-            &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp B                    &kp J         &kp L         &kp U         &kp Y         &kp SQT       &kp BSLH
-            &kp TAB       &hml LGUI A   &hml LALT R   &hml LCTL S   &hml LSHIFT T &kp G                    &kp M         &hmr RSHIFT N &hmr RCTL E   &hmr RALT I   &hmr RGUI O   &kp LS(TAB)
-            &trans        &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &csemi        &dcoln        &kp FSLH      &kp LC(ENTER)
-                                        &trans        &mo NUMB      &spc_caps     &kp BSPC                 &kp ENTER     &kp SPACE     &mo NAVI      &kp C_MUTE
+            &none       &kp Q         &kp W         &kp F         &kp P         &kp B                    &kp J         &kp L         &kp U         &kp Y         &kp SQT       &none
+            &none       &hml LGUI A   &hml LALT R   &hml LSHIFT S &hml LCTL T   &kp G                    &kp M         &hmr RCTL N   &hmr RSHIFT E &hmr RALT I   &hmr RGUI O   &none
+            &none       &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &shm COMMA SEMI &shm DOT COLON &kp FSLH   &none
+                                      &trans        &mo NUMB      &sft_caps     &kp BSPC                 &kp ENTER     &kp SPACE     &mo NAVI      &kp C_MUTE
         >;
         };
 
@@ -144,7 +151,7 @@
 
         bindings = <
             &trans        &kp INS       &kp HOME      &kp UP        &kp END       &kp PG_UP                &kp K_APP     &swap_next    &swap_prev    &kp C_BRI_UP  &kp C_BRI_DN  &none
-            &trans        &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN                &kp C_VOL_UP  &sk RSHIFT    &sk RCTL      &sk RALT      &sk RGUI      &trans
+            &trans        &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN                &kp C_VOL_UP  &sk RCTRL     &sk RSHIFT    &sk RALT      &sk RGUI      &none
             &trans        &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)                &kp C_VOL_DN  &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_STOP    &none
                                         &kp LC(BSPC)  &trans        &trans        &kp DEL                  &trans        &trans        &trans        &trans
             >;
@@ -154,21 +161,32 @@
         sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp LC(DOWN) LC(UP)>;
 
         bindings = <
-            &kp F6        &kp F5        &kp F4        &kp F3        &kp F2        &kp F1                   &kp EQUAL     &kp N7        &kp N8        &kp N9        &kp DOT       &kp COMMA
-            &kp TAB       &sk LGUI      &sk LALT      &sk LCTL      &sk LSHIFT    &kp PG_DN                &kp PLUS      &kp N4        &kp N5        &kp N6        &kp ASTRK     &kp GRAVE
-            &kp F12       &kp F11       &kp F10       &kp F9        &kp F8        &kp F7                   &kp MINUS     &kp N1        &kp N2        &kp N3        &kp FSLH      &none
-                                        &trans        &trans        &trans        &trans                   &trans        &trans        &lt NAVI N0   &trans
+            &none         &none         &none         &none         &none         &none                   &kp EQUAL     &kp N7        &kp N8        &kp N9        &kp DOT       &none
+            &none         &sk LGUI      &sk LALT      &sk LSHIFT    &sk LCTL      &mo FUNC                &kp PLUS      &kp N4        &kp N5        &kp N6        &kp ASTRK     &none
+            &none         &none         &none         &none         &none         &none                   &kp MINUS     &kp N1        &kp N2        &kp N3        &kp FSLH      &none
+                                        &trans        &trans        &trans        &trans                  &trans        &trans        &lt NAVI N0   &trans
         >;
         };
 
         func_layer {
+        sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp LC(DOWN) LC(UP)>;
+
+        bindings = <
+            &none         &none         &none         &none         &none         &none                    &none         &kp F7        &kp F8       &kp F9        &kp F12       &none
+            &none         &sk LGUI      &sk LALT      &sk LSHIFT    &sk LCTL      &mo FUNC                 &none         &kp F4        &kp F5       &kp F6        &kp F11       &none
+            &none         &none         &none         &none         &none         &none                    &none         &kp F1        &kp F2       &kp F3        &kp F10       &none
+                                        &trans        &trans        &trans        &trans                   &trans        &trans        &none        &trans
+        >;
+        };
+
+        syst_layer {
         sensor-bindings = <&inc_dec_kp LG(RIGHT) LG(LEFT) &inc_dec_kp LG(LA(RIGHT)) LG(LA(LEFT))>;
 
         bindings = <
             &none         &none         &none         &none         &none         &out OUT_BLE             &out OUT_USB  &none         &none         &none         &none         &none
             &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none                    &none         &none         &none         &none         &none         &none
             &sys_reset    &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &none                    &none         &none         &none         &none         &none         &bootloader
-                                        &kp LG(TAB)   &trans        &trans        &trans                   &trans        &trans        &trans        &kp LG(TAB)
+                                        &trans        &trans        &trans        &trans                   &trans        &trans        &trans        &trans
         >;
         };
     };
