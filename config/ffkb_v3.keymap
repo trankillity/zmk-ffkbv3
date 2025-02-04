@@ -18,6 +18,14 @@
 #define FUNC 3
 #define SYST 4
  
+#define MOD_MORPH(NAME, NORMAL, MODDED, MODS) \
+  mm_##NAME: NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    #binding-cells = <0>; \
+    bindings = <&kp NORMAL>, <&kp MODDED>; \
+    mods = <MODS>; \
+  };
+
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
@@ -75,12 +83,17 @@
             tapping-term-ms = <200>;
             bindings = <&skq LSHIFT>, <&caps_word>;
         };
-        shm: shift_mod {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        // shm: shift_mod {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <2>;
+        //     bindings = <&kp>, <&kp>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        // };
+        MOD_MORPH(csemi, COMMA, SEMI, (MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(dcoln, DOT, COLON, (MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(lparlt, LPAR, LT, (MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(rpargt, RPAR, GT, (MOD_LSFT|MOD_RSFT))
+
         // csemi: comma_semicolon {
         //     compatible = "zmk,behavior-mod-morph";
         //     #binding-cells = <0>;
@@ -141,7 +154,7 @@
         bindings = <
             &none       &kp Q         &kp W         &kp F         &kp P         &kp B                    &kp J         &kp L         &kp U         &kp Y         &kp SQT       &none
             &none       &hml LGUI A   &hml LALT R   &hml LSHIFT S &hml LCTL T   &kp G                    &kp M         &hmr RCTL N   &hmr RSHIFT E &hmr RALT I   &hmr RGUI O   &none
-            &none       &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &shm COMMA SEMI &shm DOT COLON &kp FSLH   &none
+            &none       &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &mm_csemi     &mm_dcoln     &kp FSLH      &none
                                       &trans        &mo NUMB      &sft_caps     &kp BSPC                 &kp ENTER     &kp SPACE     &mo NAVI      &kp C_MUTE
         >;
         };
