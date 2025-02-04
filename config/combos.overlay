@@ -41,10 +41,10 @@ COMBO(rbrk_rbrc, &kp RBKT, 32 33, 30, BASE NUMB)
 /* Common Symbols */
 COMBO(dash, &kp MINUS, 4 16, 40, BASE)
 COMBO(undr, &kp UNDERSCORE, 7 19, 40, BASE)
-COMBO(at, &kp AT, 2, 14, 40, BASE)
-COMBO(tilde, &kp GRAVE, 14, 26, 40, BASE)
-COMBO(bslh, &kp BSLH , 15, 27, 40, BASE)
-COMBO(fslh, &kp FSLH, 20, 32, 40, BASE)
+COMBO(at, &kp AT, 2, 14 40, BASE)
+COMBO(tilde, &kp GRAVE, 14 26, 40, BASE)
+COMBO(bslh, &kp BSLH , 15 27, 40, BASE)
+COMBO(fslh, &kp FSLH, 20 32, 40, BASE)
 
 /* Editing */
 // COMBO(tab, &kp TAB, 11 12 13, 40, BASE)
