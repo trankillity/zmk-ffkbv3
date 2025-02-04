@@ -153,7 +153,7 @@
 
         bindings = <
             &none       &kp Q         &kp W         &kp F         &kp P         &kp B                    &kp J         &kp L         &kp U         &kp Y         &kp SQT       &none
-            &none       &hml LGUI A   &hml LALT R   &hml LSHIFT S &hml LCTL T   &kp G                    &kp M         &hmr RCTL N   &hmr RSHIFT E &hmr RALT I   &hmr RGUI O   &none
+            &none       &hml LGUI A   &hml LALT R   &hml LCTL S   &hml LSHIFT T &kp G                    &kp M         &hmr RSHIFT N &hmr RCTL E   &hmr RALT I   &hmr RGUI O   &none
             &none       &kp Z         &kp X         &kp C         &kp D         &kp V                    &kp K         &kp H         &mm_csemi     &mm_dcoln     &kp FSLH      &none
                                       &trans        &mo NUMB      &sft_caps     &kp BSPC                 &kp ENTER     &kp SPACE     &mo NAVI      &kp C_MUTE
         >;
@@ -164,7 +164,7 @@
 
         bindings = <
             &trans        &kp INS       &kp HOME      &kp UP        &kp END       &kp PG_UP                &kp K_APP     &swap_next    &swap_prev    &none         &none         &none
-            &trans        &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN                &kp C_VOL_UP  &sk RCTRL     &sk RSHIFT    &sk RALT      &sk RGUI      &none
+            &trans        &kp LC(A)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN                &kp C_VOL_UP  &sk RSHIFT    &sk RCTRL     &sk RALT      &sk RGUI      &none
             &trans        &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)                &kp C_VOL_DN  &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_STOP    &none
                                         &kp LC(BSPC)  &trans        &trans        &kp DEL                  &trans        &trans        &trans        &trans
             >;
@@ -175,7 +175,7 @@
 
         bindings = <
             &none         &none         &none         &none         &none         &none                   &kp EQUAL     &kp N7        &kp N8        &kp N9        &kp DOT       &none
-            &none         &sk LGUI      &sk LALT      &sk LSHIFT    &sk LCTL      &mo FUNC                &kp PLUS      &kp N4        &kp N5        &kp N6        &kp ASTRK     &none
+            &none         &sk LGUI      &sk LALT      &sk LCTL      &sk LSHIFT    &mo FUNC                &kp PLUS      &kp N4        &kp N5        &kp N6        &kp ASTRK     &none
             &none         &none         &none         &none         &none         &none                   &kp MINUS     &kp N1        &kp N2        &kp N3        &kp FSLH      &none
                                         &trans        &trans        &trans        &trans                  &trans        &trans        &lt NAVI N0   &trans
         >;
@@ -186,7 +186,7 @@
 
         bindings = <
             &none         &none         &none         &none         &none         &none                    &none         &kp F7        &kp F8       &kp F9        &kp F12       &none
-            &none         &sk LGUI      &sk LALT      &sk LSHIFT    &sk LCTL      &mo FUNC                 &none         &kp F4        &kp F5       &kp F6        &kp F11       &none
+            &none         &sk LGUI      &sk LALT      &sk LCTL      &sk LSHIFT    &mo FUNC                 &none         &kp F4        &kp F5       &kp F6        &kp F11       &none
             &none         &none         &none         &none         &none         &none                    &none         &kp F1        &kp F2       &kp F3        &kp F10       &none
                                         &trans        &trans        &trans        &trans                   &trans        &trans        &none        &trans
         >;
