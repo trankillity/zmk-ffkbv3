@@ -23,9 +23,9 @@ manifest:
     #   remote: petejohanson
     #   revision: sensors/add-some-multiple-sensors-logging
     #   import: app/west.yml
-    # - name: zmk-tri-state
-    #   remote: dhruvinsh
-    #   revision: main
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
     # Replace the one above with the commented one below when that branch gets merged
     # into ZMK main, or if you're not using pointing devices for your build.
     # Alternatively, you can use your own zmk fork/branch if you are maintaining one.
